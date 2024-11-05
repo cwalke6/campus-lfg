@@ -1,8 +1,11 @@
+import React from 'react';
 import { useState } from 'react';
+import { ReactComponent as HomeIcon } from '../icons/home.svg';
 import './Home.css';
 import Messages from '../Messages';
 import Gallery from '../Gallery';
-
+import Navbar from '../Navbar.jsx';
+import NavItem from '../NavItem.jsx';
 
 const HomePage = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,7 +16,11 @@ const HomePage = () => {
 
   return (
     <div className='main-layout'>
-
+      <HomeIcon />
+      <Navbar>
+        <NavItem icon="😂"/>
+        <NavItem icon="😂"/>
+      </Navbar>
       <div className={`main-messages ${isOpen ? 'open' : ''}`}>
         <div className='message-header'> 
           Messages 
@@ -28,7 +35,6 @@ const HomePage = () => {
       </div>
 
       <div className='line'></div>
-      
       <Gallery />
     </div>
   );
