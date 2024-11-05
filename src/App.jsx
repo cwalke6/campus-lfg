@@ -1,13 +1,16 @@
-import { useState } from 'react';
-import './App.css';
-import './Login.css';
+import { Routes, Route } from "react-router-dom";
+import LoginPage from "./pages/Login";
+import HomePage  from "./pages/Home";
+import Registration from "./pages/Registration";
 
-const App = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
+function App() {
   return (
-    <div className='main-layout'>
-      /* Empty page */
-    </div>
-  )
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/register" element={<Registration />} />
+    </Routes>
+  );
 }
+
+export default App;
