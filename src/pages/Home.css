@@ -58,6 +58,14 @@ body{
   text-decoration: none;
 }
 
+/* Used to properly size images to fit within their "circles" */
+.navbar-images{
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  z-index: 10;
+}
+
 /* hacky way to fix the line when the gallery has 2 columns*/
 @media (max-width: 1000px) {
   .line{
