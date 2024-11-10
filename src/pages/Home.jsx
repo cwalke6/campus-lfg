@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './Home.css';
 import Messages from '../Messages';
 import Gallery from '../Gallery';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const HomePage = () => {
