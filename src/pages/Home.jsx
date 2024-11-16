@@ -14,10 +14,11 @@ const HomePage = () => {
 
   return (
     <div className='main-layout'>
-
+      {/*Should incorporate into the navbar when that gets created*/}
+      <img className="logo" src={'../../images/campusLFG-logo.jpg'} alt="CampusLFG Logo"/>
       <div className={`main-messages ${isOpen ? 'open' : ''}`}>
         <div className='message-header'> 
-          Messages 
+          Messages
         </div>
         <Messages />
       </div>
