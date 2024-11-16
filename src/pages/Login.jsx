@@ -1,8 +1,10 @@
 import './Login.css'
+import { useNavigate } from 'react-router-dom';
 import React, { useState } from 'react'
 import axios from 'axios'
 
 function Login() {
+  const navigate = useNavigate();
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
@@ -18,8 +20,15 @@ function Login() {
   const handleLogin = (event) => {
     event.preventDefault()
     axios.post('/api/login', {email, user_password: password})
-    .then(res => console.log(res.data.message))
-    .catch(err => console.log(err))
+    .then(res => 
+      {console.log(res.data.message)
+        navigate('/')
+      })
+    .catch(err => {
+      if(err.response.status === 401){
+        console.log(err.response.data.message)
+      }
+    })
   }
 
   return(
@@ -57,4 +66,4 @@ function Login() {
 }
 
 
-export default Login
+export default Login;
