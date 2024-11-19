@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Home.css';
 import Messages from './Messages';
 import Gallery from '../Gallery';
@@ -10,12 +11,20 @@ const HomePage = () => {
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+    
   };
+
+  const navigate = useNavigate();
+
+  const handleLogoClick = () => {
+    navigate('/');
+  };
+
 
   return (
     <div className='main-layout'>
       {/*Should incorporate into the navbar when that gets created*/}
-      <img className="logo" src={'../../images/campusLFG-logo.jpg'} alt="CampusLFG Logo"/>
+      <img className="logo" onCLick={handleLogoClick} src={'../../images/campusLFG-logo.jpg'} alt="CampusLFG Logo"/>
       <div className={`main-messages ${isOpen ? 'open' : ''}`}>
         <div className='message-header'> 
           Messages
