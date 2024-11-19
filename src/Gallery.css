@@ -14,6 +14,7 @@
     aspect-ratio: 16 / 9;
     border-radius: 20px;
     overflow: hidden; /* Ensures rounded corners apply to overlay as well */
+    background-color: #2e2e2e85; /* Background color if an image doesn't have a background */
 }
 
 .image {
